@@ -19,6 +19,9 @@ func main() {
 
 func IsValidNumber(number int) bool {
 	s := strconv.Itoa(number)
+
+	mapData := make(map[string]int)
+
 	adjacentDigits := false
 
 	for pos, char := range s {
@@ -26,7 +29,11 @@ func IsValidNumber(number int) bool {
 			return false
 		}
 
-		if pos > 0 && string(char) == string(s[pos-1]) {
+		mapData[string(char)] = mapData[string(char)] + 1
+	}
+
+	for _, v := range mapData {
+		if v%2 == 0 && v/2 < 2 {
 			adjacentDigits = true
 		}
 	}
