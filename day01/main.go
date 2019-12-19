@@ -13,12 +13,12 @@ func main() {
 
 	fuelRequired, exactFuelRequired := 0, 0
 	for _, mass := range masses {
-		mass = calculateFuelRequired(mass)
+		mass = CalculateFuelRequired(mass)
 		fuelRequired += mass
 
 		for mass > 0 {
 			exactFuelRequired += mass
-			mass = calculateFuelRequired(mass)
+			mass = CalculateFuelRequired(mass)
 		}
 	}
 
@@ -29,7 +29,7 @@ func main() {
 	fmt.Println(exactFuelRequired)
 }
 
-func calculateFuelRequired(mass int) int {
+func CalculateFuelRequired(mass int) int {
 	return (mass / 3) - 2
 }
 
