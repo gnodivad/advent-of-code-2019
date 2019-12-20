@@ -29,6 +29,7 @@ func main() {
 	fmt.Println(exactFuelRequired)
 }
 
+// CalculateFuelRequired return total of the fuel required per unit of mass
 func CalculateFuelRequired(mass int) int {
 	return (mass / 3) - 2
 }

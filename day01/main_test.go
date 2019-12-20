@@ -14,15 +14,6 @@ var testCases = []struct {
 	{100756, 33583},
 }
 
-var testCases2 = []struct {
-	moduleWeight int
-	expectedFuel int
-}{
-	{14, 2},
-	{1969, 966},
-	{100756, 50346},
-}
-
 func TestCalculateFuelRequired(t *testing.T) {
 	for _, testCase := range testCases {
 		result := CalculateFuelRequired(testCase.moduleWeight)
